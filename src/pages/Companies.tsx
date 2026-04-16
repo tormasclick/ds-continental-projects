@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Truck, ArrowRight } from "lucide-react";
 import logoDcm from "@/assets/logo-dcm.png";
 import logoDcs from "@/assets/logo-dcs.png";
-import logoDcp from "@/assets/logo-dcp.png";
+import logoDcp from "@/assets/logo-dcp-continental-projects.png";
 import SectionHeading from "@/components/SectionHeading";
 
 const companies = [

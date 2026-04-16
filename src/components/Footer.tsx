@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logoDcp from "@/assets/logo-dcp.png";
+import logoDcp from "@/assets/logo-dcp-continental-projects.png";
 
 const Footer = () => (
   <footer className="gradient-navy text-primary-foreground">

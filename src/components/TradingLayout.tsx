@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { tradingNav } from "@/data/tradingNav";
-import logoDcp from "@/assets/logo-dcp.png";
+import logoDcp from "@/assets/logo-dcp-continental-projects.png";
 import WhatsAppCTA from "@/components/WhatsAppCTA";
 
 interface TradingLayoutProps {

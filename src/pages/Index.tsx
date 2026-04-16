@@ -7,7 +7,7 @@ import CountryCarousel from "@/components/CountryCarousel";
 import WhatsAppCTA from "@/components/WhatsAppCTA";
 import logoDcm from "@/assets/logo-dcm.png";
 import logoDcs from "@/assets/logo-dcs.png";
-import logoDcp from "@/assets/logo-dcp.png";
+import logoDcp from "@/assets/logo-dcp-continental-projects.png";
 import heroMachinery from "@/assets/hero-machinery.jpg";
 import heroSecurity from "@/assets/hero-security.jpg";
 import heroMining from "@/assets/hero-mining.jpg";
