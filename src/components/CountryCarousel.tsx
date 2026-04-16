@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, MapPin, Briefcase, Shield, Truck, Gem, Building, Users, Wrench, HardHat, Activity } from "lucide-react";
+import { ChevronLeft, ChevronRight, Briefcase, Shield, Truck, Gem, Building, HardHat } from "lucide-react";
 
 interface Country {
   name: string;
@@ -61,7 +61,6 @@ const countriesData: Country[] = [
   }
 ];
 
-// Helper function to get icon and color for operation type
 const getOperationStyle = (operation: string) => {
   if (operation.includes("Mining") || operation.includes("Exploration")) 
     return { icon: Gem, color: "bg-amber-100 text-amber-700" };
@@ -126,7 +125,7 @@ const CountryCarousel = () => {
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
-      <div className="overflow-hidden px-4">
+      <div className="overflow-hidden px-4 pb-6">
         <div className="flex gap-6 transition-all duration-500 ease-out justify-center">
           {visibleCountries.map((country, idx) => (
             <div
@@ -219,7 +218,7 @@ const CountryCarousel = () => {
 
       {/* Dots Indicator */}
       {totalPages > 1 && (
-        <div className="flex justify-center gap-2 mt-8">
+        <div className="flex justify-center gap-2 mt-4">
           {Array.from({ length: totalPages }).map((_, idx) => (
             <button
               key={idx}
