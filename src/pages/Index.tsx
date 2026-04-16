@@ -11,17 +11,20 @@ import logoDcp from "@/assets/logo-dcp.png";
 import heroMachinery from "@/assets/hero-machinery.jpg";
 import heroSecurity from "@/assets/hero-security.jpg";
 import heroMining from "@/assets/hero-mining.jpg";
+import machineryImage from "@/assets/machinery_image_of_202604161655.jpeg";
+import securityImage from "@/assets/ds-continental-security.jpeg";
+import tradingImage from "@/assets/Geological_surveys,_mineral_202604161707.jpeg";
 
 const slides = [
-  { image: "/src/assets/Geological_surveys,_mineral_202604161707.jpeg", label: "Mining Exploration" },
-  { image: "/src/assets/machinery_image_of_202604161655.jpeg", label: "Heavy Machinery Operations" },
-  { image: "/src/assets/ds-continental-security.jpeg", label: "Security Operations" },
+  { image: tradingImage, label: "Mining Exploration" },
+  { image: machineryImage, label: "Heavy Machinery Operations" },
+  { image: securityImage, label: "Security Operations" },
 ];
 
 const subsidiaries = [
-  { name: "DS Continental Motors", desc: "Heavy equipment sourcing, machinery supply, and industrial import services across East and Central Africa.", logo: logoDcm, path: "/companies/motors", color: "border-electric-blue", icon: Truck, image: "/src/assets/machinery_image_of_202604161655.jpeg" },
-  { name: "DS Continental Security", desc: "Corporate, industrial, and mining security services with advanced surveillance solutions.", logo: logoDcs, path: "/companies/security", color: "border-industrial-red", icon: Shield, image: "/src/assets/ds-continental-security.jpeg" },
-  { name: "DS Continental Trading", desc: "Geological surveys, mineral exploration, mining operations, and mineral export services.", logo: logoDcp, path: "/companies/trading", color: "border-steel-grey", icon: Gem, image: "/src/assets/Geological_surveys,_mineral_202604161707.jpeg" },
+  { name: "DS Continental Motors", desc: "Heavy equipment sourcing, machinery supply, and industrial import services across East and Central Africa.", logo: logoDcm, path: "/companies/motors", color: "border-electric-blue", icon: Truck, image: machineryImage },
+  { name: "DS Continental Security", desc: "Corporate, industrial, and mining security services with advanced surveillance solutions.", logo: logoDcs, path: "/companies/security", color: "border-industrial-red", icon: Shield, image: securityImage },
+  { name: "DS Continental Trading", desc: "Geological surveys, mineral exploration, mining operations, and mineral export services.", logo: logoDcp, path: "/companies/trading", color: "border-steel-grey", icon: Gem, image: tradingImage },
 ];
 
 const stats = [
