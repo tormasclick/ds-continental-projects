@@ -19,6 +19,7 @@ const navItems = [
   {
     label: "Our Companies", path: "/companies",
     children: [
+      { label: "All Companies", path: "/companies" },
       { label: "DS Continental Motors", path: "/companies/motors" },
       { label: "DS Continental Security", path: "/companies/security" },
       { label: "DS Continental Trading", path: "/companies/trading" },
@@ -42,7 +43,6 @@ const Navbar = () => {
           <img src={logoDcp} alt="DS Continental Projects" className="h-10 w-auto" />
         </Link>
 
-        {/* Desktop */}
         <div className="hidden lg:flex items-center gap-1">
           {navItems.map((item) => (
             <div
@@ -53,8 +53,8 @@ const Navbar = () => {
             >
               <Link
                 to={item.path}
-                className={`px-3 py-2 text-sm font-subheading font-medium rounded-md transition-colors flex items-center gap-1 ${
-                  location.pathname === item.path ? "text-primary" : "text-foreground hover:text-primary"
+                className={`px-3 py-2 text-sm font-subheading rounded-md transition-colors flex items-center gap-1 ${
+                  location.pathname === item.path || location.pathname.startsWith(item.path + "/") ? "text-primary" : "text-foreground hover:text-primary"
                 }`}
               >
                 {item.label}
@@ -77,35 +77,24 @@ const Navbar = () => {
           ))}
         </div>
 
-        <Link to="/contact" className="hidden lg:inline-flex px-5 py-2 text-sm font-subheading font-semibold bg-industrial-red text-primary-foreground rounded-md hover:opacity-90 transition-opacity">
+        <Link to="/contact" className="hidden lg:inline-flex px-5 py-2 text-sm font-subheading bg-industrial-red text-primary-foreground rounded-md hover:opacity-90 transition-opacity">
           Get in Touch
         </Link>
 
-        {/* Mobile toggle */}
         <button className="lg:hidden p-2" onClick={() => setMobileOpen(!mobileOpen)}>
           {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
-      {/* Mobile menu */}
       {mobileOpen && (
         <div className="lg:hidden bg-background border-t border-border px-4 py-4 space-y-2 max-h-[80vh] overflow-y-auto">
           {navItems.map((item) => (
             <div key={item.label}>
-              <Link
-                to={item.path}
-                className="block py-2 font-subheading font-medium text-foreground"
-                onClick={() => setMobileOpen(false)}
-              >
+              <Link to={item.path} className="block py-2 font-subheading text-foreground" onClick={() => setMobileOpen(false)}>
                 {item.label}
               </Link>
               {item.children?.map((child) => (
-                <Link
-                  key={child.path}
-                  to={child.path}
-                  className="block py-1.5 pl-4 text-sm text-muted-foreground"
-                  onClick={() => setMobileOpen(false)}
-                >
+                <Link key={child.path} to={child.path} className="block py-1.5 pl-4 text-sm text-muted-foreground" onClick={() => setMobileOpen(false)}>
                   {child.label}
                 </Link>
               ))}
