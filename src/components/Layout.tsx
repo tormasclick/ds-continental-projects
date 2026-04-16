@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Breadcrumbs from "./Breadcrumbs";
-import Chatbot from "./Chatbot";
+import WhatsAppButton from "./WhatsAppButton";
 
 const Layout = ({ children }: { children: ReactNode }) => (
   <div className="min-h-screen flex flex-col">
@@ -10,7 +10,7 @@ const Layout = ({ children }: { children: ReactNode }) => (
     <Breadcrumbs />
     <main className="flex-1">{children}</main>
     <Footer />
-    <Chatbot />
+    <WhatsAppButton />
   </div>
 );
 

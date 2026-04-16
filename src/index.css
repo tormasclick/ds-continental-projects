@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Roboto+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -49,21 +49,24 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-body antialiased;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
   }
   h1, h2, h3 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
   }
   h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
   }
 }
 
 @layer utilities {
-  .font-headline { font-family: 'Space Grotesk', sans-serif; }
-  .font-subheading { font-family: 'Poppins', sans-serif; }
-  .font-body { font-family: 'Inter', sans-serif; }
-  .font-mono-stat { font-family: 'Roboto Mono', monospace; }
+  .font-headline { font-family: 'Ubuntu', sans-serif; font-weight: 700; }
+  .font-subheading { font-family: 'Ubuntu', sans-serif; font-weight: 500; }
+  .font-body { font-family: 'Ubuntu', sans-serif; font-weight: 400; }
 
   .gradient-hero {
     background: linear-gradient(90deg, rgba(13,53,87,0.85), rgba(0,0,0,0.6));
@@ -85,6 +88,14 @@
   from { opacity: 0; transform: translateX(-40px); }
   to { opacity: 1; transform: translateX(0); }
 }
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slow-zoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
 
 .animate-fade-in-up {
   animation: fade-in-up 0.6s ease-out both;
@@ -94,4 +105,10 @@
 }
 .animate-slide-in-left {
   animation: slide-in-left 0.6s ease-out both;
+}
+.animate-slide-in-right {
+  animation: slide-in-right 0.6s ease-out both;
+}
+.animate-slow-zoom {
+  animation: slow-zoom 8s ease-out both;
 }

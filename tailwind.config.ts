@@ -12,10 +12,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        headline: ["Space Grotesk", "sans-serif"],
-        subheading: ["Poppins", "sans-serif"],
-        body: ["Inter", "sans-serif"],
-        "mono-stat": ["Roboto Mono", "monospace"],
+        headline: ["Ubuntu", "sans-serif"],
+        subheading: ["Ubuntu", "sans-serif"],
+        body: ["Ubuntu", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
