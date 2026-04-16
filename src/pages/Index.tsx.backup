@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Truck, Shield, Gem, Factory, Globe, Pickaxe, Wrench, BarChart3, ChevronRight, ChevronLeft, Wheat } from "lucide-react";
+import { ArrowRight, Truck, Shield, Gem, Factory, Globe, Pickaxe, Wrench, BarChart3, ChevronRight, Wheat } from "lucide-react";
 import { useInView } from "@/hooks/useInView";
 import SectionHeading from "@/components/SectionHeading";
 import CountryCarousel from "@/components/CountryCarousel";
@@ -85,52 +85,30 @@ const Index = () => {
           </div>
         ))}
         <div className="absolute inset-0 gradient-hero" />
-        
-        {/* Centered Content - Added justify-center and text-center */}
-        <div className="absolute inset-0 flex items-center justify-center text-center">
+        <div className="absolute inset-0 flex items-center">
           <div className="container mx-auto px-4">
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-headline text-white max-w-4xl mx-auto animate-fade-in-up">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-headline text-primary-foreground max-w-4xl animate-fade-in-up">
               Powering Industry Across East and Central Africa
             </h1>
-            <p className="mt-4 text-lg md:text-xl text-white/80 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+            <p className="mt-4 text-lg md:text-xl text-primary-foreground/80 max-w-2xl animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
               Integrated solutions in heavy machinery supply, mineral exploration, and professional security services.
             </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-3 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-              <Link to="/companies" className="px-7 py-3 bg-industrial-red text-white font-subheading rounded-md hover:opacity-90 transition-opacity flex items-center gap-2">
+            <div className="mt-8 flex flex-wrap gap-3 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+              <Link to="/companies" className="px-7 py-3 bg-industrial-red text-primary-foreground font-subheading rounded-md hover:opacity-90 transition-opacity flex items-center gap-2">
                 Explore Our Companies <ArrowRight className="w-4 h-4" />
               </Link>
               <WhatsAppCTA label="Chat on WhatsApp" />
             </div>
           </div>
         </div>
-        
-        {/* Left and Right Navigation Buttons - NEW */}
-        <button 
-          onClick={() => setActiveSlide((prev) => (prev - 1 + slides.length) % slides.length)} 
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-electric-blue text-white p-3 rounded-full transition-all z-20"
-          aria-label="Previous slide"
-        >
-          <ChevronLeft className="w-6 h-6" />
-        </button>
-        <button 
-          onClick={() => setActiveSlide((prev) => (prev + 1) % slides.length)} 
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-electric-blue text-white p-3 rounded-full transition-all z-20"
-          aria-label="Next slide"
-        >
-          <ChevronRight className="w-6 h-6" />
-        </button>
-        
-        {/* Dots Indicator */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
           {slides.map((_, i) => (
-            <button 
-              key={i} 
-              onClick={() => setActiveSlide(i)} 
-              className={`h-2 rounded-full transition-all ${i === activeSlide ? "bg-white w-6" : "bg-white/40 w-2"}`} 
-            />
+            <button key={i} onClick={() => setActiveSlide(i)} className={`w-3 h-3 rounded-full transition-all ${i === activeSlide ? "bg-primary-foreground w-8" : "bg-primary-foreground/40"}`} />
           ))}
         </div>
       </section>
+
+      {/* SECTION 2 — About DS Continental Projects */}
       <section className="py-20">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
           <div>
@@ -138,7 +116,7 @@ const Index = () => {
             <p className="text-muted-foreground leading-relaxed">
               Headquartered in Nairobi, Kenya, DS Continental Projects operates through three specialized subsidiaries across East and Central Africa. Our integrated approach ensures seamless delivery — from sourcing heavy machinery to securing industrial sites and exploring mineral wealth.
             </p>
-            <Link to="/about" className="mt-6 inline-flex items-center justify-center text-center gap-2 text-electric-blue font-subheading hover:underline">
+            <Link to="/about" className="mt-6 inline-flex items-center gap-2 text-electric-blue font-subheading hover:underline">
               Learn More About Us <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

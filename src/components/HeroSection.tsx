@@ -1,45 +1,75 @@
-import { Link } from "react-router-dom";
-import { LucideIcon } from "lucide-react";
+import { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-interface HeroSectionProps {
-  title: string;
-  subtitle: string;
-  image: string;
-  primaryCta?: { label: string; href: string; icon?: LucideIcon };
-  secondaryCta?: { label: string; href: string };
-  height?: string;
-}
+const HeroSection = ({ slides = [] }: { slides?: any[] }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovering, setIsHovering] = useState(false);
 
-const HeroSection = ({ title, subtitle, image, primaryCta, secondaryCta, height = "h-[50vh]" }: HeroSectionProps) => (
-  <section className={`relative ${height} overflow-hidden`}>
-    <img src={image} alt="" className="absolute inset-0 w-full h-full object-cover" />
-    <div className="absolute inset-0 gradient-hero" />
-    <div className="absolute inset-0 flex items-center">
-      <div className="container mx-auto px-4">
-        <h1 className="text-3xl md:text-5xl font-headline text-primary-foreground max-w-3xl animate-fade-in-up">
-          {title}
-        </h1>
-        <p className="mt-4 text-lg text-primary-foreground/80 max-w-2xl animate-fade-in-up" style={{ animationDelay: "0.15s" }}>
-          {subtitle}
-        </p>
-        {(primaryCta || secondaryCta) && (
-          <div className="mt-6 flex flex-wrap gap-3 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-            {primaryCta && (
-              <Link to={primaryCta.href} className="px-6 py-3 bg-industrial-red text-primary-foreground font-subheading font-medium rounded-md hover:opacity-90 transition-opacity flex items-center gap-2">
-                {primaryCta.icon && <primaryCta.icon className="w-4 h-4" />}
-                {primaryCta.label}
-              </Link>
-            )}
-            {secondaryCta && (
-              <Link to={secondaryCta.href} className="px-6 py-3 border border-primary-foreground/40 text-primary-foreground font-subheading font-medium rounded-md hover:bg-primary-foreground/10 transition-colors">
-                {secondaryCta.label}
-              </Link>
-            )}
-          </div>
-        )}
+  useEffect(() => {
+    if (!isHovering && slides.length > 1) {
+      const interval = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % slides.length);
+      }, 5000);
+      return () => clearInterval(interval);
+    }
+  }, [isHovering, slides.length]);
+
+  if (slides.length === 0) return null;
+
+  const current = slides[currentIndex];
+
+  return (
+    <div 
+      className="relative h-screen w-full overflow-hidden"
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+    >
+      {/* Background Image - Full width */}
+      <div className="absolute inset-0 w-full h-full">
+        <img src={current.image} alt={current.label} className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-black/50 w-full" />
       </div>
+      
+      {/* Centered Content - Full width flex centering */}
+      <div className="relative h-full w-full flex items-center justify-center text-center px-4">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight">
+            {current.label}
+          </h1>
+          {current.description && (
+            <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+              {current.description}
+            </p>
+          )}
+          {current.ctaText && (
+            <button className="bg-electric-blue hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300">
+              {current.ctaText}
+            </button>
+          )}
+        </div>
+      </div>
+
+      {/* Left and Right Navigation Buttons */}
+      {slides.length > 1 && (
+        <>
+          <button 
+            onClick={() => setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length)} 
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-electric-blue text-white p-3 rounded-full transition-all z-20"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+          <button 
+            onClick={() => setCurrentIndex((prev) => (prev + 1) % slides.length)} 
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-electric-blue text-white p-3 rounded-full transition-all z-20"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+        </>
+      )}
     </div>
-  </section>
-);
+  );
+};
 
 export default HeroSection;
