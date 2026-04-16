@@ -25,7 +25,6 @@ const navItems = [
       { label: "DS Continental Trading", path: "/companies/trading" },
     ],
   },
-  { label: "Projects", path: "/projects" },
   { label: "Partnerships", path: "/partnerships" },
   { label: "Insights", path: "/insights" },
   { label: "Contact", path: "/contact" },

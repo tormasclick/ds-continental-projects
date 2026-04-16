@@ -25,16 +25,13 @@ import ImportServices from "./pages/companies/motors/ImportServices";
 import SpareParts from "./pages/companies/motors/SpareParts";
 import MotorsFAQ from "./pages/companies/motors/MotorsFAQ";
 import MotorsContact from "./pages/companies/motors/MotorsContact";
-import MotorsProjects from "@/pages/companies/motors/MotorsProjects";
 import { CorporateSecurity, IndustrialSecurity, MiningSecurity, VIPProtection, EventSecurity } from "./pages/companies/security/ServicePages";
 import Surveillance from "./pages/companies/security/Surveillance";
 import SecurityFAQ from "./pages/companies/security/SecurityFAQ";
 import SecurityContact from "./pages/companies/security/SecurityContact";
-import SecurityProjects from "@/pages/companies/security/SecurityProjects";
 import { GeologicalSurvey, MineralExploration, MiningOperations, MineralProcessing, LabTesting, MineralExport } from "./pages/companies/trading/ServicePages";
 import TradingFAQ from "./pages/companies/trading/TradingFAQ";
 import TradingContact from "./pages/companies/trading/TradingContact";
-import TradingProjects from "@/pages/companies/trading/TradingProjects";
 import TradingRegions from "./pages/companies/trading/TradingRegions";
 import Projects from "./pages/Projects";
 import Partnerships from "./pages/Partnerships";
@@ -70,7 +67,6 @@ const App = () => (
             <Route path="/companies/motors/spare-parts" element={<SpareParts />} />
             <Route path="/companies/motors/faq" element={<MotorsFAQ />} />
             <Route path="/companies/motors/contact" element={<MotorsContact />} />
-            <Route path="/companies/motors/projects" element={<MotorsProjects />} />
             {/* Security mini-site */}
             <Route path="/companies/security" element={<Security />} />
             <Route path="/companies/security/corporate" element={<CorporateSecurity />} />
@@ -82,8 +78,6 @@ const App = () => (
             <Route path="/companies/security/risk-assessment" element={<RiskAssessment />} />
             <Route path="/companies/security/faq" element={<SecurityFAQ />} />
             <Route path="/companies/security/contact" element={<SecurityContact />} />
-            <Route path="/companies/security/projects" element={<SecurityProjects />} />
-            <Route path="/companies/security/projects" element={<SecurityProjects />} />
             {/* Trading mini-site */}
             <Route path="/companies/trading" element={<Trading />} />
             <Route path="/companies/trading/geological-survey" element={<GeologicalSurvey />} />
@@ -96,8 +90,6 @@ const App = () => (
             <Route path="/companies/trading/exploration-map" element={<ExplorationMap />} />
             <Route path="/companies/trading/faq" element={<TradingFAQ />} />
             <Route path="/companies/trading/contact" element={<TradingContact />} />
-            <Route path="/companies/trading/projects" element={<TradingProjects />} />
-            <Route path="/companies/trading/projects" element={<TradingProjects />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/partnerships" element={<Partnerships />} />
             <Route path="/insights" element={<Insights />} />
