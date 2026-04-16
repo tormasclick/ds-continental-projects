@@ -3,28 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DS Continental Projects | Energising Continental Economy</title>
+    <title>DS Continental Projects | Industrial Group & Subsidiaries</title>
     <meta name="description" content="DS Continental Projects - Leading industrial group specializing in heavy machinery, security solutions, and mineral trading across East and Central Africa.">
     <meta name="author" content="DS Continental Projects" />
 
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="DS Continental Projects | Industrial Excellence Across Africa">
-    <meta property="og:description" content="Energising Continental Economy through heavy machinery, security solutions, and mineral trading.">
-    <meta property="og:image" content="/logo-dcp.png">
-    <meta property="og:url" content="https://continentalprojects.com">
+    <meta property="og:description" content="DS Continental Projects - Heavy machinery, security solutions, and mineral trading. Powering Africa's industrial growth.">
+    <meta property="og:image" content="https://yourdomain.com/og-image.jpg">
+    <meta property="og:url" content="https://yourdomain.com">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="DS Continental Projects | Industrial Group">
-    <meta name="twitter:description" content="Energising Continental Economy across Africa">
-    <meta name="twitter:image" content="/logo-dcp.png">
+    <meta name="twitter:description" content="Leading provider of heavy machinery, security solutions, and mineral trading across East and Central Africa.">
+    <meta name="twitter:image" content="https://yourdomain.com/twitter-image.jpg">
     
-    <!-- Favicon - Multiple formats for best browser support -->
+    <!-- Favicon - you'll need to replace this with your company favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   </head>
 
   <body>
